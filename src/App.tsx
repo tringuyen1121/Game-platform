@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import { Header } from './components/Header';
+import Header from './components/Header/Header';
+import LoadingSpinner from './components/Spinner/LoadingSpinner';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <Header />;
+  return (
+    <div style={{ paddingTop: '80px' }}>
+      <Header />
+      <main style={{ padding: '2rem' }}>
+        <h2>CSS Animations Working!</h2>
+        <LoadingSpinner />
+      </main>
+    </div>
+  );
 }
 
 export default App;

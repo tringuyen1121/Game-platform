@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import './Header.css';
 
-export const Header = () => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -185,3 +184,5 @@ const NavMenu = styled.nav`
     }
   }
 `;
+
+export default Header;
