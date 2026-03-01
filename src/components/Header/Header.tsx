@@ -33,10 +33,7 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   height: 80px;
   background: rgba(10, 10, 15, 0.8);
   backdrop-filter: blur(10px);
