@@ -6,9 +6,10 @@ interface GameCardProps {
   description: string;
   color: string;
   index: number;
+  url?: string;
 }
 
-const GameCard = ({ title, description, color, index }: GameCardProps) => {
+const GameCard = ({ title, description, color, index, url }: GameCardProps) => {
   return (
     <GameCardContainer
       $color={color}
@@ -27,7 +28,11 @@ const GameCard = ({ title, description, color, index }: GameCardProps) => {
       <CardGlow $color={color} />
       <h3>{title}</h3>
       <p>{description}</p>
-      <PlayButton whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+      <PlayButton
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        href={url}
+      >
         Play Now
       </PlayButton>
     </GameCardContainer>
@@ -78,7 +83,7 @@ const GameCardContainer = styled(motion.div)<{ $color: string }>`
   }
 `;
 
-const PlayButton = styled(motion.button)`
+const PlayButton = styled(motion.a)`
   background: linear-gradient(90deg, #00d4ff, #7b2ff7);
   border: none;
   padding: 0.75rem 2rem;

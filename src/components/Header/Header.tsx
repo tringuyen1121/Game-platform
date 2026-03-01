@@ -23,7 +23,7 @@ const Header = () => {
       </MenuToggle>
 
       <NavMenu className={menuOpen ? 'open' : ''}>
-        <a href="#games">Games</a>
+        <a href="/">Games</a>
         <a href="#featured">Featured</a>
         <a href="#new">New</a>
         <a href="#about">About</a>

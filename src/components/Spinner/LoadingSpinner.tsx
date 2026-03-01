@@ -43,17 +43,17 @@ const SpinnerRing = styled.div`
   animation: ${spin} 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
 
   &:nth-child(1) {
-    border-top-color: #00d4ff;
+    border-top-color: #45b8ac;
     animation-delay: -0.45s;
   }
 
   &:nth-child(2) {
-    border-top-color: #7b2ff7;
+    border-top-color: #b565a7;
     animation-delay: -0.3s;
   }
 
   &:nth-child(3) {
-    border-top-color: #ff006e;
+    border-top-color: #e84855;
     animation-delay: -0.15s;
   }
 `;

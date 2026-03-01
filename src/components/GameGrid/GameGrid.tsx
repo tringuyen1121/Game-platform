@@ -3,9 +3,10 @@ import GameCard from '../GameCard/GameCard';
 
 const games = [
   {
-    title: 'Space Quest',
-    description: 'Epic space adventure',
+    title: 'Match Game',
+    description: 'Find matching pairs of cards',
     color: '#00d4ff',
+    url: '/games/match-game',
   },
   {
     title: 'Puzzle Master',
@@ -25,7 +26,7 @@ const GameGrid = () => {
       <SectionTitle>Featured Games</SectionTitle>
       <Grid>
         {games.map((game, index) => (
-          <GameCard key={game.title} {...game} index={index} />
+          <GameCard key={game.title} {...game} index={index} url={game.url} />
         ))}
       </Grid>
     </Section>

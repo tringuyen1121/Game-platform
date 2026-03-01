@@ -1,14 +1,31 @@
 import styled from 'styled-components';
 import GameBoard from './GameBoard';
+import MatchLogo from './MatchLogo';
+import { useEffect, useState } from 'react';
+import LoadingSpinner from '../Spinner/LoadingSpinner';
 
 const MatchGameScreen = () => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setReady(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <Container>
-      <Title>
-        MATCH GAME{' '}
-        <span style={{ color: 'rgb(91, 186, 111)', marginLeft: '4px' }}>.</span>
-      </Title>
-      <GameBoard />
+      {!ready && <LoadingSpinner />}
+      {ready && (
+        <>
+          <MatchLogo />
+          <Title>
+            MATCH GAME{' '}
+            <span style={{ color: 'rgb(91, 186, 111)', marginLeft: '4px' }}>
+              .
+            </span>
+          </Title>
+          <GameBoard />
+        </>
+      )}
     </Container>
   );
 };
@@ -20,8 +37,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
 `;
+
 const Title = styled.h2`
   font-size: 28px;
   color: rgb(238, 238, 240);
